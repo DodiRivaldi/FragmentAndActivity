@@ -1,5 +1,6 @@
 package developerkampus.fragmentandactivity.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
@@ -16,6 +17,13 @@ public class HasilActivity extends AppCompatActivity {
 
         tvHasil = (TextView) findViewById(R.id.tv_hasil);
 
+        Intent intent = getIntent();
+        Bundle b = intent.getExtras();
+
+        if(b!=null){
+            String hasil = (String) b.get("hasilnya");
+            tvHasil.setText(hasil);
+        }
 
     }
 }
